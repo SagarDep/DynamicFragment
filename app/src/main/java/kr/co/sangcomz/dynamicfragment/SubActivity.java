@@ -13,7 +13,6 @@ import android.support.v7.app.ActionBarActivity;
 public class SubActivity extends ActionBarActivity {
 
     public static ViewPager mPager;					//뷰 페이저
-//    private LinearLayout mPageMark;			//현재 몇 페이지 인지 나타내는 뷰
     private FragmentAdapter adapter;
     int day;
 
@@ -23,31 +22,11 @@ public class SubActivity extends ActionBarActivity {
         setContentView(R.layout.activity_sub);
         Intent i = getIntent();
         Bundle b = i.getBundleExtra("bundle");
-        System.out.println("subActivity :::: " + b.getString("test"));
-        System.out.println("MainActivity EditText :::: " + b.getString("et"));
         day =  Integer.valueOf(b.getString("et"));
 
         mPager = (ViewPager)findViewById(R.id.pager);						//뷰 페이저
         adapter = new FragmentAdapter(getSupportFragmentManager());
-
         new FragmentAsyncTask().execute();
-
-        mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
 
     }
 
@@ -55,20 +34,18 @@ public class SubActivity extends ActionBarActivity {
         public FragmentAdapter(FragmentManager fm) {
             super(fm);
         }
-
         @Override
         public Fragment getItem(int position) {
-            Fragment f = new TestFragment();
+            Fragment f = new TestFragment(); //생성
             Bundle bundle = new Bundle();
             bundle.putInt("position", position);
             f.setArguments(bundle);
             return f;
-
         }
-
         @Override
-        public int getCount() { return day; }
+        public int getCount() { return day; } //Fragment 수
     }
+
     //
     public class FragmentAsyncTask extends AsyncTask<String, String, String> {
         @Override

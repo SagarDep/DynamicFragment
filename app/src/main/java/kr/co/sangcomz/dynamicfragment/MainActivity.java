@@ -20,7 +20,6 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         et = (EditText)findViewById(R.id.et_num);
         btn = (Button)findViewById(R.id.btn);
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +31,6 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(i);
             }
         });
-
     }
 
 }
