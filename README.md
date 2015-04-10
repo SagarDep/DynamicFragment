@@ -8,4 +8,5 @@
 
 # More Info
 
-[More Info : API KEY](http://blog.naver.com/sangcomz/220313476669)
+[More Info](http://blog.naver.com/sangcomz/220313476669)
+[Contact Me](http://sangcomz.cafe24.com/contact.php)
