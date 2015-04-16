@@ -20,4 +20,19 @@
         android:text="@string/btn_text" />
 
 
+    <EditText
+        android:id="@+id/et_num2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/et_num2"
+        android:layout_below="@+id/et_num2"
+        android:text="@string/btn_text" />
+
+
 </RelativeLayout>

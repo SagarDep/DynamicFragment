@@ -12,30 +12,24 @@ import android.support.v7.app.ActionBarActivity;
 import github.chenupt.springindicator.SpringIndicator;
 
 
-public class SubActivity extends ActionBarActivity {
+public class SubSubActivity extends ActionBarActivity {
 
     public static ViewPager mPager;					//뷰 페이저
     private FragmentAdapter adapter;
     int day;
 
-    SpringIndicator springIndicator;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub);
+        setContentView(R.layout.activity_subsub);
         Intent i = getIntent();
         Bundle b = i.getBundleExtra("bundle");
         day =  Integer.valueOf(b.getString("et"));
 
-        springIndicator = (SpringIndicator) findViewById(R.id.indicator);
 
         mPager = (ViewPager)findViewById(R.id.pager);						//뷰 페이저
         adapter = new FragmentAdapter(getSupportFragmentManager());
         new FragmentAsyncTask().execute();
-
-
-
     }
 
     private class FragmentAdapter extends FragmentStatePagerAdapter {
@@ -59,7 +53,6 @@ public class SubActivity extends ActionBarActivity {
         @Override
         protected String doInBackground(String... params) {
             mPager.setAdapter(adapter);
-            springIndicator.setViewPager(mPager);
             return null;
         }
     }

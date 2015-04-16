@@ -13,6 +13,8 @@ import android.widget.EditText;
 public class MainActivity extends ActionBarActivity {
     Button btn;
     EditText et;
+    Button btn2;
+    EditText et2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,20 @@ public class MainActivity extends ActionBarActivity {
                 Bundle b = new Bundle();
                 b.putString("test", "isTest");
                 b.putString("et", et.getText().toString());
+                i.putExtra("bundle", b);
+                startActivity(i);
+            }
+        });
+
+        et2 = (EditText)findViewById(R.id.et_num2);
+        btn2 = (Button)findViewById(R.id.btn2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SubSubActivity.class);
+                Bundle b = new Bundle();
+                b.putString("test", "isTest");
+                b.putString("et", et2.getText().toString());
                 i.putExtra("bundle", b);
                 startActivity(i);
             }
